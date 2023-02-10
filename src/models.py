@@ -1,7 +1,7 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, constr, conint
 
 
 class CurrencyConversion(BaseModel):
-    from_currency: str
-    to_currency: str
+    from_currency: constr(regex="^[A-Z]{3}$")
+    to_currency: constr(regex="^[A-Z]{3}$")
     amount: float
