@@ -1,6 +1,6 @@
 # FastAPI Currency Converter
 
-Este projeto é uma API que fornece conversão monetária, respondendo em JSON. A moeda base é o USD e as conversões são realizadas com cotações atualizadas de diferentes moedas.
+Este projeto é uma API que fornece conversão monetária, respondendo em JSON. As conversões são realizadas com cotações atualizadas em tempo real,  de diferentes moedas.
 
 A requisição deve incluir os parâmetros: moeda de origem, valor a ser convertido e moeda final.
 
@@ -27,7 +27,7 @@ pip install -r requeriments
 ```
 
 ### Execução através do docker
-Certifique-se de que tenha o docker e o docker compose instalado com o comando, observando a saida, as versões podem não ser, necessariamente, as mesmas dos exemplos abaixo:
+Certifique-se de que tenha o docker e o docker compose instalado com o comando abaixo, observando a saida. As versões podem não ser, necessariamente, as mesmas dos exemplos abaixo:
  
 ```shell 
 ❯ docker --version  
@@ -44,7 +44,7 @@ docker-compose -u
 ## Acessando via browser
 Acesse apontando o browse para o endereço: [http://localhost:8000](http://localhost:8000)
 
-## Exemplo de requisão atraves do Curl
+## Exemplo de requisição atraves do Curl
 
 ### Chamada:
 ```bash
@@ -55,5 +55,18 @@ curl -X 'GET' \
 
 ### Retorno:
 ```bash
-{ "success": true, "query": { "from": "USD", "to": "BTC", "amount": 21700 }, "info": { "timestamp": 1676050803, "rate": 0.000046215603 }, "date": "2023-02-10", "result": 1.002879 }
+{
+  "success": true,
+  "query": {
+    "from": "USD",
+    "to": "BTC",
+    "amount": 21700
+  },
+  "info": {
+    "timestamp": 1676050803,
+    "rate": 0.000046215603
+  },
+  "date": "2023-02-10",
+  "result": 1.002879
+}
 ```
