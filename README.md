@@ -20,7 +20,7 @@ cd fastapi-currency-converter
 ```
 O projeto pode ser executado em uma máquina linux, de duas maneiras, localmente ou através do docker
 
-### Execução local
+### Execução local (requer o python versão ~=3.10)
 Estando na diretório raiz do projeto, ative a virtuaenv python de sua preferencia e instale as dependencias com o comando:
 ```shell 
 pip install -r requeriments
