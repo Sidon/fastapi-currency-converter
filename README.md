@@ -6,12 +6,52 @@ A requisição deve incluir os parâmetros: moeda de origem, valor a ser convert
 
 Exemplo: `?from=BTC&to=EUR&amount=123.45`
 
+
+## Índice
+
+- [Requisição](#requisição)
+- [Tecnologias utilizadas](#tecnologias-utilizadas)
+- [Clonando o projeto](#clonando-o-projeto)
+- [Configuração](#configuração)
+- [Executando o projeto](#executando-o-projeto)
+    - [Execução local (requer o python versão ~=3.10)](#execução-local-requer-o-python-versão-~=3.10)
+    - [Execução através do docker](#execução-através-do-docker)
+- [Acessando via browser](#acessando-via-browser)
+- [Exemplo de requisição através do Curl](#exemplo-de-requisição-através-do-curl)
+    - [Chamada](#chamada)
+    - [Retorno](#retorno)
+
+
+## Requisição
+
+A requisição deve incluir os parâmetros: moeda de origem, valor a ser convertido e moeda final.
+
+Exemplo: `?from=BTC&to=EUR&amount=123.45`
+
+## Tecnologias utilizadas
+
+- `pydantic`~=1.10.4
+- `fastapi`~=0.90.0
+- `requests`~=2.28.2
+- `uvicorn`~=0.20.0
+- `python-dotenv`~=0.21.1
+- `python-multipart`~=0.0.5
+- `Jinja2`~=3.1.2
+- `starlette`~=0.23.0
+
 ## Clonando o projeto
 
 Para clonar o projeto, basta executar o seguinte comando no terminal:
 ```shell
 git clone git@github.com:Sidon/fastapi-currency-converter.git
 ```
+
+## Configuração 
+
+Os valores dos ativos são obtidos através da API [fixer.io](https://fixer.io) e utiliza uma chave pessoal temporária. 
+No entanto, essa chave pode ser substituída no arquivo `.env` na raiz do projeto.
+
+
 ## Executando o projeto
 
 Para executar o projeto, a primeira coisa a se fazer é ir para o diretorio do mesmo, para isso, após cloná-lo, execute o comando:
@@ -27,7 +67,8 @@ pip install -r requeriments
 ```
 
 ### Execução através do docker
-Certifique-se de que tenha o docker e o docker compose instalado com o comando abaixo, observando a saida. As versões podem não ser, necessariamente, as mesmas dos exemplos abaixo:
+Certifique-se de que tenha o docker e o docker compose instalado com o comando abaixo, observando a saida. 
+As versões podem não ser, necessariamente, as mesmas dos exemplos abaixo:
  
 ```shell 
 ❯ docker --version  
