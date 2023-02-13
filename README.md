@@ -25,7 +25,7 @@ Exemplo: `?from=BTC&to=EUR&amount=123.45`
   
 Para clonar o projeto, basta executar o seguinte comando no terminal:  
 ```shell  
-git clone git@github.com:Sidon/fastapi-currency-converter.git
+git clone git@github.com:Sidon/fastapi-currency-converter.git <enter>
 ```  
   
 ## Configuração   
@@ -35,37 +35,38 @@ No entanto, essa chave pode ser substituída no arquivo `.env` na raiz do projet
   
 ## Executando o projeto  
   
-Para executar o projeto, a primeira coisa a se fazer é ir para o diretorio do mesmo, para isso, após cloná-lo, execute o comando:  
-```shell cd fastapi-currency-converter
+Para executar o projeto, a primeira coisa a fazer é ir para o diretorio do mesmo, para isso, após cloná-lo, execute o comando:  
+```shell 
+cd fastapi-currency-converter <enter>
 ```  
 O projeto pode ser executado em uma máquina linux, de duas maneiras, localmente ou através do docker  
   
 ### Execução local
 O sistema foi desenvolvido utilizando o python 3.10, para execução local é necessário um ambiente com uma versão do python compativel.
-Estando na diretório raiz do projeto, ative a virtuaenv python de sua preferencia e instale as dependencias com o comando:  
+Estando no diretório raiz do projeto, ative a virtuaenv python de sua preferencia e instale as dependencias com o comando:  
 ```shell 
-pip install -r requeriments
+pip install -r requirements.txt <enter>
 ```  
 ### Execução através do docker  
-Certifique-se de que tenha o docker e o docker compose instalado com o comando abaixo, observando a saida.   
-As versões podem não ser, necessariamente, as mesmas dos exemplos abaixo:  
+Certifique-se de que tenha o docker e o docker compose instalado com o comando abaixo, observando a saida. As versões podem não ser, necessariamente, as mesmas dos exemplos abaixo:  
    
 ```shell
-❯ docker --version 
+❯ docker --version <enter>
 Docker version 23.0.0, build e92dd87  
 
-❯ docker compose version 
+❯ docker compose version <enter>
 Docker Compose version v2.15.1  
 ```  
-Execute o projeto com o comando:  
+Execute o projeto com os comandos:  
 ```shell
-docker-compose -u
+docker compose build <enter>
+docker-compose up -d <enter>
 ```  
 ## Acessando via browser  
 Acesse apontando o browse para o endereço: [http://localhost:8000](http://localhost:8000)  
   
 ## Requisição  
-O endpoint de entrada apresenta um front-end simples onde se pode fazer a consulta  atraves do preenchimento dos campos, mas é possível, também fazer requisições diretas para se obter o JSON resultante via browser, para isso a requisição deve incluir os parâmetros:  moeda de origem, valor a ser convertido e moeda final.  
+O endpoint de entrada apresenta um front-end simples onde se pode fazer a consulta através do preenchimento dos campos, mas é possível, também fazer requisições diretas para se obter o JSON resultante via browser, para isso a requisição deve incluir os parâmetros:  moeda de origem, valor a ser convertido e moeda final.  
   
 Exemplo:  
 [http://0.0.0.0:8000/convert?from_currency=USD&to_currency=BTC&amount=21700](http://0.0.0.0:8000/convert?from_currency=USD&to_currency=BTC&amount=21700)  
